@@ -22,11 +22,13 @@
 			</ul>
 			<ul>
 				<li class="category">Social </li>
-				<li> <a href="https://www.facebook.com/gavin.chiang.98"></a>Facebook </li>
-				<li><a href="https://github.com/GavinChiang"></a>Github</li>
+				<li> <%= link_to("Facebook", "https://www.facebook.com/gavin.chiang.98") %> </li>
+				<li><%= link_to("GitHub", "https://github.com/GavinChiang") %></li>
 				<li><a href="mailto: cchsuan@umich.edu">Email </a></li>
 			</ul>
-			<p class="sign_in"> Admin Login </p>
+			<% if !user_signed_in? %>
+			<p class="sign_in"> <%= link_to "Login", new_user_session_path %> </p>
+			<% end %>
 		</div>
 		<div id="main_content">
 			<div id="header">
@@ -37,12 +39,15 @@
 			<% else %>
 				<%= link_to "Back to All Posts", root_path %>
 			<% end %>
+
+			<% if user_signed_in? %>
 				<div class="buttons">
 					<button class="button">
 					<%= link_to "New Post", new_post_path %>
 					</button>
-					<button class="button"> Log Out</button>
+					<button class="button"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></button>
 				</div>
+				<% end %>
 			</div>
 			<% flash.each do |name, msg| %>
 			<%= content_tag(:div, msg, class: "alert") %>
