@@ -1,6 +1,18 @@
-
+<div class="post_wrapper">
+	<div class="buttons">
+		<button class="button">
+		<font color="#FF0000"> <%= link_to("new category", new_category_path) %> </font>
+		</button>
+	</div>
+</div>
 <% @categories.each do |category| %>
 <div class="post_wrapper">
-	<li> <%=link_to (category.title), category_path(category.id)%> </li>
+	<li>
+		 <font size="6"> <%=link_to (category.title), category_path(category.id)%> </font>
+		   <button class="button">
+			<font color="#FF0000"> <%= link_to("edit", edit_category_path(category)) %> </font>
+			</button>
+		
+	</li>
 </div>
 <% end %>

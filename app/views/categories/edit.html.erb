@@ -1,0 +1,12 @@
+<div id="page_wrapper">
+	<h1> <%= @category.title %> </h1>
+
+	<%= simple_form_for @category  do |c| %>
+	<div  class="field">
+    <%= c.input :title %>
+  </div>
+	<br>
+	<%= c.submit "Edit", data: { disable_with: "Submitting..." } %>
+	<% end %>
+	
+</div>
