@@ -1,6 +1,6 @@
 
-<% @categories.each do |c| %>
+<% @categories.each do |category| %>
 <div class="post_wrapper">
-	<li> <%=c.title%> </li>
+	<li> <%=link_to (category.title), category_path(category.id)%> </li>
 </div>
 <% end %>

@@ -21,6 +21,12 @@
 </p>
 
 <p>
+	<% @categories = Category.all.map{|c| [c.title, c.id]} %>
+    <%= f.input :category_id, :collection => @categories, as: :radio_buttons, :checked => @categories[0] %>
+
+</p>
+
+<p>
 <%= f.submit %>
 </p>
 
