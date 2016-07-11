@@ -1,8 +1,12 @@
 <% @posts.each do |post| %>
 <div class="post_wrapper">
 	<h2 class="title">
-		<%= link_to post.title, post %>
+	<%= link_to post.title, post %>
 	</h2>
-	<p class="date"> <%= post.created_at.strftime("%B, %d, %Y")  %></p>
+	<br>
+	<%= truncate(post.body, :length => 10) %>
+	<font color="#00CED1"> <%= link_to "(whole post)", post %> </font>
+	
+	<p class="date"> <%= post.created_at.strftime("%B, %d, %Y") %> </p>
 </div>
 <% end %>
