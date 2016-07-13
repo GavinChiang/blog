@@ -14,9 +14,9 @@
 		<%= simple_format(@post.body) %>
 	</p>
 	<div id="comments">
-		<h2> <%= @post.comments.count %> Comments </h2>
-		<%= render @post.comments %>
+		<!-- <h2> <%#= @post.comments.count %> Comments </h2> -->
+		<%#= render @post.comments %>
 		<h3> Add Comment </h3>
-		<%= render "comments/form" %>
+		<%= render "disqus" %>
 	</div>
 </div>
