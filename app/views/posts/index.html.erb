@@ -7,6 +7,10 @@
 	<%= truncate(post.body, :length => 10) %>
 	<font color="#00CED1"> <%= link_to "(whole post)", post %> </font>
 	
-	<p class="date"> <%= post.created_at.strftime("%B, %d, %Y") %> </p>
+	<p class="date"> <%= post.created_at.strftime("%b %d, %Y") %> </p>
 </div>
 <% end %>
+
+<div class="center">
+	<%= will_paginate @posts, inner_window: 2 %>
+</div>
