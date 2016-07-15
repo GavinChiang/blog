@@ -24,8 +24,8 @@
 			<ul>
 				<li class="category">Social </li>
 				<li> <%= link_to("Facebook", "https://www.facebook.com/gavin.chiang.98") %> </li>
-				<li><%= link_to("GitHub", "https://github.com/GavinChiang") %></li>
-				<li><a href="mailto: cchsuan@umich.edu">Email </a></li>
+				<li> <%= link_to("GitHub", "https://github.com/GavinChiang") %></li>
+				<li> <%= link_to("Contact", new_contact_path) %> </li>
 			</ul>
 			<% if !user_signed_in? %>
 			<p class="sign_in"> <%= link_to "Login", new_user_session_path %> </p>

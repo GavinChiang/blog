@@ -8,6 +8,8 @@ gem 'friendly_id', '~> 5.1.0'
 
 gem 'will_paginate', '~> 3.1.0'
 
+gem 'mail_form'
+
 gem 'devise', '~> 4.1.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'

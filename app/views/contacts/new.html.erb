@@ -1,0 +1,23 @@
+<div id="page_wrapper">
+	<h1> Send Message to Gavin </h1>
+	<%= simple_form_for @contact, url: contacts_path do |f| %>
+	<p>
+		<%= f.input :name, required: true %>
+	</p>
+	<br>
+	<p>
+		<%= f.input :email, required: true %>
+	</p>
+	<br>
+	<p>
+		<%= f.input :message, as: :text %>
+	</p>
+	<br>
+	<div class="hidden">
+		<%= f.input :nickname, hint: "left blank" %>
+	</div>
+	<p>
+		<%= f.submit "Send to Gavin", class: 'button' %>
+	</p>
+	<% end %>
+</div>
