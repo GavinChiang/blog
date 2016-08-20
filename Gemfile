@@ -10,6 +10,8 @@ gem 'will_paginate', '~> 3.1.0'
 
 gem 'mail_form'
 
+gem "font-awesome-rails"
+
 gem 'redactor-rails'
 
 gem "carrierwave"
