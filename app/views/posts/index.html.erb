@@ -5,7 +5,7 @@
 	</h2>
 	<br>
 	<p>
-		<%= truncate(post.body, :length => 10) %>
+		<%= truncate(simple_format(post.body), :length => 100) %>
 		<font color="#00CED1"> <%= link_to "(whole post)", post %> </font>
 	</p>
 	
