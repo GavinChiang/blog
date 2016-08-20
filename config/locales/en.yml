@@ -22,5 +22,5 @@
 en:
   hello: "Hello world"
   will_paginate:
-    previous_label: <span class="glyphicon glyphicon-hand-left"></span>
-    next_label: <span class="glyph glyph-next"></span>
+    # previous_label: <span class="glyphicon glyphicon-hand-left"></span>
+    # next_label: <span class="glyph glyph-next"></span>
