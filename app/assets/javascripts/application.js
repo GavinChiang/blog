@@ -13,7 +13,7 @@
 //= require jquery
 //= require clean-blog.min
 //= require jquery_ujs
+//= require bootstrap.min.js
 //= require turbolinks
-//= require bootstrap
 //= require_tree .
 //= require redactor-rails
