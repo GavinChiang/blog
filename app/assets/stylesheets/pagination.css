@@ -21,7 +21,7 @@ div.pagination a {
 }
 
 div.pagination a:hover, div.pagination a:active {
-	color: white;
+  color: white;
   background-color: #0085A1;
   border: 1px solid #0085A1;
 }
