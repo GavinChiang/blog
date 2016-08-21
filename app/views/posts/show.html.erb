@@ -48,11 +48,12 @@
                    <%= simple_format(@post.body) %>
                 </div>
             </div>
-        </div>
+        <br>
         <div id="comments">
 		<!-- <h2> <%#= @post.comments.count %> Comments </h2> -->
 		<%#= render @post.comments %>
 		<h3> Add Comment </h3>
 		<%= render "disqus" %>
+		 </div>
 	</div>
     </article>
