@@ -15,15 +15,10 @@
 	</head>
 	
 	<body>
-	 <%= render "common/navbar" %>
-   
-
-    
+	<%= render "common/navbar" %>  
 	<%= yield %>
 	<hr>
     <%= render :partial => "common/footer" %>
-
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
 </body>
 </html>
