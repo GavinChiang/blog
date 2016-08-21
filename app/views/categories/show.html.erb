@@ -1,9 +1,20 @@
+<%= render "common/header", header_title: 'Gavin Chiang', sub_title: 'Things I love', pic_path: 'blog/home-bg.jpg',is_post: false  %>
+
 <% @posts.each do |post| %>
-<div class="post_wrapper">
-	<h2 class="title">
-		<%= link_to post.title, post %>
-	</h2>
-	<p class="date"> <%= post.created_at.strftime("%B, %d, %Y")  %></p>
+<div class="row">
+	<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+		<div class="post-preview">
+			<%= link_to post do %>
+			<h2 class="post-title">
+			<%= post.title %>
+			</h2>
+			<% end %>
+			<h3 class="post-subtitle">
+			<%= truncate(simple_format(post.body), :length => 100) %>
+			</h3>
+			<p class="post-meta">Posted by <%= post.created_at.strftime("%b %d, %Y") %> </p>
+			<hr>
+		</div>
+	</div>
 </div>
 <% end %>
-

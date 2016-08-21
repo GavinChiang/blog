@@ -1,35 +1,11 @@
-<!-- <div id="page_wrapper">
-	<div id="profile_image">
-		<%#= image_tag "profile.JPG" %>
-	</div>
-	<div id="content">
-		<h1>Hey, I'm Gavin Chiang</h1>
-		<p>Welcome to my personal blog.</p>
-		<p>This blog is build with Ruby on Rails. You're actually on the production version right now. Cool stuff, right!.</p>
-		<p>If you'd like to follow along as I learn more Ruby on Rails, find me on Facebook <a href="https://www.facebook.com/gavin.chiang.98"> Gavin Chiang</a> or check my<a href="https://github.com/GavinChiang"> GitHub. </a></p>
-	</div>
-</div> -->
-<header class="intro-header" style="background-image: url(<%= asset_path 'blog/about-bg.jpg' %>)">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="page-heading">
-                        <h1>About Me</h1>
-                        <hr class="small">
-                        <span class="subheading">This is what I do.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
+<%= render "common/header", header_title: 'About Me', pic_path: 'blog/about-bg.jpg', sub_title: "This is what I do.",is_post: false  %>
 <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h1>Hey, I'm Gavin Chiang</h1>
-		<p>Welcome to my personal blog.</p>
-		<p>This blog is build with Ruby on Rails. You're actually on the production version right now. Cool stuff, right!.</p>
-		<p>If you'd like to follow along as I learn more Ruby on Rails, find me on Facebook <a href="https://www.facebook.com/gavin.chiang.98"> Gavin Chiang</a> or check my<a href="https://github.com/GavinChiang"> GitHub. </a></p>
-            </div>
-        </div>
-    </div>
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<h1>Hey, I'm Gavin Chiang</h1>
+			<p>Welcome to my personal blog.</p>
+			<p>This blog is built with Ruby on Rails. You're actually on the production version right now. Cool stuff, right!.</p>
+			<p>If you'd like to follow along and how I exlpore the world, find me on Facebook <a href="https://www.facebook.com/gavin.chiang.98"> Gavin Chiang</a> or check my<a href="https://github.com/GavinChiang"> GitHub. </a></p>
+		</div>
+	</div>
+</div>

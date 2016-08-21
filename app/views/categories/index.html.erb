@@ -1,41 +1,20 @@
+<%= render "common/header", header_title: 'Categories', sub_title: 'What are you interested in?', pic_path: 'blog/category-bg.jpeg',is_post: false  %>
+
 <% if user_signed_in? %>
-<div class="post_wrapper">
-	<div class="buttons">
-		<button class="button">
-		<font color="#FF0000"> <%= link_to("New Category", new_category_path) %> </font>
-		</button>
+<%= link_to("New Category", new_category_path, class: "btn btn-info btn-xs pull-right") %>
+<% end %>
+
+<% @categories.each do |category| %>
+<div class="row">
+	<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+		<li>
+			<h4> <%=link_to (category.title + " (#{category.posts_count})"), category_path(category.id)%> </h4>
+			<% if user_signed_in? %>
+			<%= link_to("Edit", edit_category_path(category), class: "btn btn-warning btn-xs") %>
+			<%= link_to("Delete", category_path(category.id), method: :delete , class: "btn btn-danger btn-xs",data: { confirm: "Are you sure to delete this category？"}) %>
+			<% end %>
+			
+		</li>
 	</div>
 </div>
 <% end %>
-<% @categories.each do |category| %>
-<!-- <div class="post_wrapper"> -->
-	<!-- <li>
-		<h2> <#%=link_to (category.title), category_path(category.id)%> </h2>
-		
-		<div class="group">
-			<#%= link_to("Edit", edit_category_path(category), class: "btn btn-primary pull-right") %>
-			<#%= link_to("Delete", category_path(category.id), method: :delete , class: "btn btn-danger pull-right") %>
-		</div>
-	</li> -->
-<!-- </div> -->
-
-
-<div class="col-md-10">
-<li><h2> <%=link_to (category.title + " (#{category.posts_count})"), category_path(category.id)%> </h2></li>
-
-<% if user_signed_in? %>
-<div class="btn-toolbar">
-  <div class="btn-group">
-  <%= link_to("Edit", edit_category_path(category), class: "btn btn-primary pull-right") %>
-  </div>
-    <div class="btn-group">
-
-			<%= link_to("Delete", category_path(category.id), method: :delete , class: "btn btn-danger pull-right",data: { confirm: "Are you sure to delete this category？"}) %>
-  </div>
-		
-</div>
-<% end %>
-</div>
-
-<% end %>
-
