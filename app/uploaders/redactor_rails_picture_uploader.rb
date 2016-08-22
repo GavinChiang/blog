@@ -29,7 +29,7 @@ class RedactorRailsPictureUploader < CarrierWave::Uploader::Base
   # end
 
   process :read_dimensions
-
+  process :resize_to_limit => [500, -1]
   # Create different versions of your uploaded files:
   version :thumb do
     process :resize_to_fill => [118, 100]
