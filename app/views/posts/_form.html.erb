@@ -18,7 +18,9 @@
 	 <%= f.input :title, required: true,label: 'Title', placeholder: :title, id:"title"  %>
 </div>
 
-<br>
+<div class="row control-group">
+	 <%= f.input :subtitle , required: true, label: 'Sub Title',  id: "subtitle" %>
+</div>
 
 <div class="row control-group">
 	<% @categories = Category.all.map{|c| [c.title, c.id]} %>

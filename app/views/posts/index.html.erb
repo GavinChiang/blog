@@ -13,10 +13,10 @@
             <h2 class="post-title">
             <%= post.title %>
             </h2>
-            <% end %>
             <h3 class="post-subtitle">
-            <%= truncate(simple_format(post.body), length: 100) %>
+            <%= truncate(post.subtitle, length: 50) %>
             </h3>
+            <% end %>
             <p class="post-meta">Posted on <%= post.created_at.strftime("%b %d, %Y") %> </p>
             <hr>
         </div>
