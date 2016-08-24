@@ -16,6 +16,7 @@
 !/log/.keep
 /tmp
 /public/system/redactor_assets
-/config/application.yml
+
 # Ignore application configuration
 /config/application.yml
+.byebug_history
