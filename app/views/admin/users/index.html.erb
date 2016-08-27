@@ -1,0 +1,41 @@
+<%= render "common/header", header_title: 'Admin Mode', sub_title: nil, pic_path: 'blog_min/home-bg.jpg',is_post: false %>
+<!-- Main Content -->
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+  <h2>All Users</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Email</th>
+        <th>Admin</th>
+        <th>Switch</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= user.id %>
+        </td>
+        <td>
+          <%= user.email %>
+        </td>
+        <td>
+          <% if user.admin? %>
+            <div style='color:#DC143C'> Admin </div>
+          <% else %>
+            <div style='color:#1E90FF'> Nomral </div>
+          <% end %>
+        </td>
+        <td>
+          <% if !user.admin? %>
+            <%= link_to("To Admin", to_admin_admin_user_path(user), method: :post, :style => "color:#DC143C", data: { confirm: 'Are you sure to ADMIN?'}) %>
+          <% else %>
+            <%= link_to("To Nomral", to_normal_admin_user_path(user), method: :post, :style => "color:#1E90FF", data: { confirm: 'Are you sure to NORMAL?'}) %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

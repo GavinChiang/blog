@@ -4,8 +4,16 @@ Rails.application.routes.draw do
 
   resources :categories
 
-  resources :posts do
-    resources :comments
+  resources :posts
+
+  namespace :admin do
+  	resources :posts
+    resources :users do 
+      member do
+        post :to_admin
+        post :to_normal
+      end
+    end
   end
   
   resources :contacts, only: [:new, :create]

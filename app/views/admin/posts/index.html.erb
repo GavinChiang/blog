@@ -1,0 +1,27 @@
+<%= render "common/header", header_title: 'Admin Mode', sub_title: nil, pic_path: 'blog_min/home-bg.jpg',is_post: false %>
+<!-- Main Content -->
+<%= link_to("New Post", new_admin_post_path, class: "btn btn-default pull-right")%>
+
+<% @posts.each do |post| %>
+
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-preview">
+            <%= link_to post do %>
+            <div class="post-title"><%= post.title %>
+                <div class="pull-right">
+                    <%= link_to 'Edit', edit_admin_post_path(post) %> | <%= link_to 'Delete', admin_post_path(post), method: :delete, data: { confirm: 'Are you sure to delete this post?'} %>
+                </div>
+            </div>
+            <% end %>
+            <p class="post-meta">Posted on <%= post.created_at.strftime("%b %d, %Y") %> </p>
+        </div>
+    </div>
+</div>
+<% end %>
+<!-- Pager -->
+<ul class="pager">
+    <li class="next">
+        <%= will_paginate @posts, inner_window: 2 %>
+    </li>
+</ul>

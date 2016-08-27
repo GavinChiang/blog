@@ -26,9 +26,14 @@
                 </li>
 
                 <% if !user_signed_in? %>
-                <li> <%= link_to "Login", new_user_session_path %> </li>
+                <li> <%= link_to("Login", new_user_session_path) %> </li>
+                <% elsif user_signed_in? && current_user.is_admin?
+                     %>
+                <li> <%= link_to("Posts", admin_posts_path) %> </li> 
+                <li> <%= link_to("Users", admin_users_path) %> </li>
+                <li> <%= link_to("Log Out", destroy_user_session_path, method: :delete) %>  </li>
                 <% else %>
-                <li> <%= link_to "Log Out", destroy_user_session_path, method: :delete %>  </li>
+                <li> <%= link_to("Log Out", destroy_user_session_path, method: :delete) %>  </li>
                 <% end %>
                 
             </div>
