@@ -1,4 +1,4 @@
-<%= render "common/header", header_title: @post.title, pic_path: 'blog_min/post-bg.jpeg', sub_title: @post.subtitle , post_time: 'Posted by ' + @post.created_at.strftime("%B %d, %Y"), is_post: true %>
+<%= render "common/header", header_title: @post.title, pic_path: 'blog_min/post-bg.jpeg', sub_title: @post.subtitle , post_time: (@post.is_private ? 'Privately ': '') + 'Posted by ' + @post.created_at.strftime("%B %d, %Y"), is_post: true %>
 
 <!-- Post Content -->
 <article>

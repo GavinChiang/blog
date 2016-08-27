@@ -15,27 +15,25 @@
 <% end %>
 
 <div class="row control-group">
-	 <%= f.input :title, required: true,label: 'Title', placeholder: :title, id:"title"  %>
+	 <%= f.input :title, required: true,label: 'Title', placeholder: "Enter topic", id:"title"  %>
 </div>
 
 <div class="row control-group">
-	 <%= f.input :subtitle , required: true, label: 'Sub Title',  id: "subtitle" %>
+	<%= f.input :subtitle , required: true, label: 'Sub Title', placeholder: "Short summary for this post", id: "subtitle" %>
 </div>
 
 <div class="row control-group">
 	<% @categories = Category.all.map{|c| [c.title, c.id]} %>
-    <%= f.input :category_id, required: true,id:"category" ,:collection => @categories, as: :select, :checked => @categories[0] %>
+    <%= f.input :category_id, required: true, id:"category" ,:collection => @categories, as: :select %>
 </div>
 
-<!-- need to fix -->
 <div class="row control-group">
-	<%#= f.label :body %>
-	<%#= f.text_area :body %>
-	<%#= f.input :body, as: :text %>
-	<%#= f.text_area :body, class:"redactor", :rows => 40, :cols => 120 %>
 	<%= f.input :body, as: :text, label: 'Content', :input_html => { :class => "redactor"} , id:"body" %>
 </div>
-<!-- need to fix -->
+
+<div class="row control-group">
+	<%= f.input :is_private, as: :boolean, label: 'Private?'%>
+</div>
 
 <div id="success">
         <div class="row">
