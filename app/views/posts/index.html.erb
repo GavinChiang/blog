@@ -3,6 +3,13 @@
 <!-- Main Content -->
 <% if user_signed_in? %>
 <%= link_to("New Post", new_post_path, class: "btn btn-default pull-right")%>
+    <% if !current_user.is_admin?%>
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        Thanks for singing up, you are allowed to post but not edit or delete.
+        <br>
+       Please create a post to Gavin!!
+    </div>
+    <% end %>
 <% end %>
 
 <% @posts.each do |post| %>
