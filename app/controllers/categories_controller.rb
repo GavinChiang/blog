@@ -1,9 +1,8 @@
 class CategoriesController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
-
+  before_action :admin_required, only: [:new, :edit, :destroy]
   def index
-    # @categories = Category.all.order("create_at DESC")
     @categories = Category.all
   end
 

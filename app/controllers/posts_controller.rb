@@ -1,7 +1,12 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all.order('created_at DESC').paginate(:page => params[:page], :per_page => 4)
+    if user_signed_in?
+      @posts = Post.all
+    else
+      @posts = Post.where(:is_private => false)
+    end
+    @posts = @posts.order('created_at DESC').paginate(:page => params[:page], :per_page => 4)
   end
 
   def new
@@ -17,10 +22,6 @@ class PostsController < ApplicationController
       render 'new'
     end
   end
-  
-  def update
-    byebug
-  end  
 
   def show
     @post = Post.friendly.find(params[:id])
